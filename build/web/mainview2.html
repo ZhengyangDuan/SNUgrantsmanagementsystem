@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>welcome</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            Welcome <p id="un"></p>
+            Application submitted.<br/>
+            
+         
+        <script type="text/javascript">
+            function parseurl(p)
+            {
+                var url = window.location.search.substring(1);
+                var pArray = url.split('&');
+                for(var i = 0; i <pArray.length;i++){
+                    var currentP = pArray[i].split('=');
+                    if (currentP[0] == p){
+                        return currentP[1]
+                    }
+                }
+            }
+            
+            var username = parseurl('user');
+            document.getElementById('un').innerHTML = username;
+        </script>
+        
+        
+        <button type="button" onclick = "redirect()">new application</button>
+        
+        <script>
+            function redirect(){
+               
+                
+                window.location = "application.html?user="+username;
+            }
+            
+        </script>
+        </div>
+        
+         
+    </body>
+</html>
