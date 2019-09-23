@@ -57,5 +57,29 @@ public class applicationDA {
        
     
     }
+    public String searchApplications(String ID){
+        
+        String sql = "Select APPID from Application Where FMID =" + ID;
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        String result = "";
+        try{
+            conn = getConnection();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);// store all data to result set
+            while(rs.next()){
+                result += rs.getString("APPID");
+            }
+            conn.close();
+            stmt.close();
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return result;
+    }
     
 }

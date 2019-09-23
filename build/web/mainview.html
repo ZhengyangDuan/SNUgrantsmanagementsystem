@@ -28,9 +28,12 @@ and open the template in the editor.
             
             var username = parseurl('user');
             document.getElementById('un').innerHTML = username;
+            
         </script>
         
         <button type="button" onclick = "redirect()">new application</button>
+        <button type="button" onclick = "redirect2()">view applications</button>
+        
         
         <script>
             function redirect(){
@@ -38,6 +41,7 @@ and open the template in the editor.
                 
                 window.location = "application.html?user="+username;
             }
+            
             
         </script>
         </div>
